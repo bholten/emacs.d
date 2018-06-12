@@ -1,11 +1,19 @@
-(require-package 'blackboard-theme)
-;; Blackboard theme
-(load-theme 'blackboard t)
-
+;;;; TWEAKS
 ;; Global linum mode
 (global-linum-mode 1)
 
-;; Set the default font
+;;;; ORG-MODE
+;; HTMLize for org-mode
+(require-package 'htmlize)
+
+;; Set org mode to pretty-print code blocks
+(setq org-src-fontify-natively t)
+
+;;;; COSMETIC STUFF
+;; At the end on purpose, if anything goes wrong the theme/fonts will
+;; be wrong
+(require-package 'blackboard-theme)
+(load-theme 'blackboard t)
 (add-to-list 'default-frame-alist '(font . "Inconsolata"))
 (set-face-attribute 'default t :font "Inconsolata")
 
