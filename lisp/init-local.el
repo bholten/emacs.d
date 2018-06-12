@@ -1,6 +1,6 @@
 (require-package 'blackboard-theme)
 ;; Blackboard theme
-(load-theme 'blackboard)
+(load-theme 'blackboard t)
 
 ;; Global linum mode
 (global-linum-mode 1)
