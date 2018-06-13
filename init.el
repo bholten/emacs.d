@@ -131,6 +131,7 @@
 (require 'init-ledger)
 (require 'init-ess)
 (require 'init-sml)
+(require 'init-scala)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
