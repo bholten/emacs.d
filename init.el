@@ -132,6 +132,7 @@
 (require 'init-ess)
 (require 'init-sml)
 (require 'init-scala)
+(require 'init-scheme)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
