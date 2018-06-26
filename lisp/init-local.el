@@ -2,6 +2,9 @@
 ;; Global linum mode
 (global-linum-mode 1)
 
+;; Use swiper instead of isearch by default
+(global-set-key (kbd "C-s") 'swiper)
+
 ;;;; ORG-MODE
 ;; HTMLize for org-mode
 (require-package 'htmlize)
