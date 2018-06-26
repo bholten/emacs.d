@@ -1,0 +1,13 @@
+(require-package 'irony)
+(require-package 'company-irony)
+(require-package 'flycheck-irony)
+
+(require-package 'meson-mode)
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(provide 'init-cpp)
