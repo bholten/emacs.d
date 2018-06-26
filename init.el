@@ -133,6 +133,7 @@
 (require 'init-sml)
 (require 'init-scala)
 (require 'init-scheme)
+(require 'init-cpp)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
