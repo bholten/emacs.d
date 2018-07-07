@@ -12,6 +12,10 @@
 ;; Set org mode to pretty-print code blocks
 (setq org-src-fontify-natively t)
 
+;; Ruby Environment Manager
+(require-package 'rvm)
+(rvm-use-default)
+
 ;;;; COSMETIC STUFF
 ;; At the end on purpose, if anything goes wrong the theme/fonts will
 ;; be wrong

@@ -1,7 +1,7 @@
 (require-package 'irony)
 (require-package 'company-irony)
 (require-package 'flycheck-irony)
-
+(require-package 'company-c-headers)
 (require-package 'meson-mode)
 
 (add-hook 'c++-mode-hook 'irony-mode)
