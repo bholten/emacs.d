@@ -12,6 +12,8 @@ Very minimal addition's beyond Mr. Purcell's config:
 - Standard ML
 - Scheme/Racket
 - Scala
+- More C/C++ goodies
+- Crystal language support
 
 All these additions are very vanilla. I haven't tweaked them fully
 yet.

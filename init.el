@@ -134,6 +134,7 @@
 (require 'init-scala)
 (require 'init-scheme)
 (require 'init-cpp)
+(require 'init-crystal)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
