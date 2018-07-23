@@ -4,7 +4,7 @@ https://github.com/purcell/emacs.d
 
 Please see that repo for any issues.
 
-Very minimal addition's beyond Mr. Purcell's config:
+Very minimal additions beyond Mr. Purcell's config:
 
 - Minor theme and org-mode tweaks
 - Pipenv for Python
@@ -19,4 +19,4 @@ Very minimal addition's beyond Mr. Purcell's config:
 - Ocaml
 
 All these additions are generally vanilla and could use some
-improvement..
+improvement.
