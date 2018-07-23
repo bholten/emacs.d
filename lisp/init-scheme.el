@@ -8,5 +8,7 @@
 ;; Add unicode support for racket
 (add-hook 'racket-mode-hook      #'racket-unicode-input-method-enable)
 (add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
+(add-hook 'racket-mode-hook 'paredit-mode)
+(add-hook 'scheme-mode-hook 'paredit-mode)
 
 (provide 'init-scheme)
