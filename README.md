@@ -13,7 +13,7 @@ Very minimal addition's beyond Mr. Purcell's config:
 - Standard ML
 - Scheme/Racket
 - Scala
-- More C/C++ goodies (on-going, complete unstable, beware)
+- More C/C++ goodies (on-going, completely unstable, beware)
 - Crystal language support
 - Golang
 - Ocaml
