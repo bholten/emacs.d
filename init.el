@@ -136,6 +136,7 @@
 (require 'init-cpp)
 (require 'init-crystal)
 (require 'init-golang)
+(require 'init-ocaml)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
