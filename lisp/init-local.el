@@ -16,8 +16,8 @@
 ;;;; COSMETIC STUFF
 ;; At the end on purpose, if anything goes wrong the theme/fonts will
 ;; be wrong
-(require-package 'blackboard-theme)
-(load-theme 'blackboard t)
+(require-package 'material-theme)
+(load-theme 'material t)
 (add-to-list 'default-frame-alist '(font . "Inconsolata"))
 (set-face-attribute 'default t :font "Inconsolata")
 
