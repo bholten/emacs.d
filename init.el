@@ -137,6 +137,7 @@
 (require 'init-crystal)
 (require 'init-golang)
 (require 'init-ocaml)
+(require 'init-idris)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)

@@ -17,6 +17,7 @@ Very minimal additions beyond Mr. Purcell's config:
 - Crystal language support
 - Golang
 - Ocaml
+- Idris
 
 All these additions are generally vanilla and could use some
 improvement.
