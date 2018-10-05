@@ -18,6 +18,8 @@ Very minimal additions beyond Mr. Purcell's config:
 - Golang
 - Ocaml
 - Idris
+- Elixir
+- Nim
 
 All these additions are generally vanilla and could use some
 improvement.

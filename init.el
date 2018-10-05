@@ -138,6 +138,8 @@
 (require 'init-golang)
 (require 'init-ocaml)
 (require 'init-idris)
+(require 'init-nim)
+(require 'init-elixir)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
