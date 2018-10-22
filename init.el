@@ -135,7 +135,7 @@
 (require 'init-cpp)
 (require 'init-crystal)
 (require 'init-golang)
-(require 'init-ocaml)
+;;(require 'init-ocaml)
 (require 'init-idris)
 (require 'init-nim)
 (require 'init-elixir)
