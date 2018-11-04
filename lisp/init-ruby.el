@@ -37,6 +37,8 @@
 ;;; Inferior ruby
 (require-package 'inf-ruby)
 
+;; for pry
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 
 ;;; Ruby compilation
