@@ -116,6 +116,7 @@
 (require 'init-clojure)
 (require 'init-clojure-cider)
 (require 'init-common-lisp)
+(add-to-list 'exec-path (substitute-in-file-name "$HOME/.bin/"))
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
