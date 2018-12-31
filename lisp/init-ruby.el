@@ -1,3 +1,7 @@
+;;; init-ruby.el --- Support for the Ruby language -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
 ;;; Basic ruby setup
 (require-package 'ruby-hash-syntax)
 
@@ -125,3 +129,4 @@
 
 
 (provide 'init-ruby)
+;;; init-ruby.el ends here
