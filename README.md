@@ -4,7 +4,7 @@ https://github.com/purcell/emacs.d
 
 Please see that repo for any issues.
 
-Very minimal additions beyond Mr. Purcell's config:
+Additions beyond Mr. Purcell's config:
 
 - Minor theme and org-mode tweaks
 - Pipenv for Python
