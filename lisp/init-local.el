@@ -18,7 +18,7 @@
 ;; be wrong
 (require-package 'material-theme)
 (load-theme 'material t)
-(add-to-list 'default-frame-alist '(font . "Inconsolata"))
-(set-face-attribute 'default t :font "Inconsolata")
+(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+(set-face-attribute 'default t :font "Inconsolata-14")
 
 (provide 'init-local)
