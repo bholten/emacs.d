@@ -13,6 +13,8 @@
                 ("SConscript\\'" . python-mode))
               auto-mode-alist))
 
+(setq python-shell-interpreter "python3")
+
 (require-package 'pip-requirements)
 (require-package 'pipenv)
 
