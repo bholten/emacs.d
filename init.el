@@ -135,7 +135,7 @@
 (require 'init-ledger)
 (require 'init-ess)
 (require 'init-sml)
-(require 'init-scala)
+;;(require 'init-scala)
 (require 'init-scheme)
 (require 'init-cpp)
 (require 'init-crystal)
