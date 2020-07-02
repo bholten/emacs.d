@@ -24,6 +24,8 @@
  ediff-split-window-function 'split-window-horizontally
  ediff-window-setup-function 'ediff-setup-windows-plain
  indent-tabs-mode nil
+ create-lockfiles nil
+ auto-save-default nil
  make-backup-files nil
  mouse-yank-at-point t
  save-interprogram-paste-before-kill t
@@ -36,7 +38,7 @@
 (add-hook 'after-init-hook 'global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
-(after-load 'autorevert
+(with-eval-after-load 'autorevert
   (diminish 'auto-revert-mode))
 
 (add-hook 'after-init-hook 'transient-mark-mode)
@@ -82,7 +84,7 @@
 
 
 
-(after-load 'subword
+(with-eval-after-load 'subword
   (diminish 'subword-mode))
 
 
@@ -118,7 +120,7 @@
 (when (maybe-require-package 'symbol-overlay)
   (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))
     (add-hook hook 'symbol-overlay-mode))
-  (after-load 'symbol-overlay
+  (with-eval-after-load 'symbol-overlay
     (diminish 'symbol-overlay-mode)
     (define-key symbol-overlay-mode-map (kbd "M-i") 'symbol-overlay-put)
     (define-key symbol-overlay-mode-map (kbd "M-I") 'symbol-overlay-remove-all)
@@ -136,12 +138,12 @@
 (require-package 'browse-kill-ring)
 (setq browse-kill-ring-separator "\f")
 (global-set-key (kbd "M-Y") 'browse-kill-ring)
-(after-load 'browse-kill-ring
+(with-eval-after-load 'browse-kill-ring
   (define-key browse-kill-ring-mode-map (kbd "C-g") 'browse-kill-ring-quit)
   (define-key browse-kill-ring-mode-map (kbd "M-n") 'browse-kill-ring-forward)
   (define-key browse-kill-ring-mode-map (kbd "M-p") 'browse-kill-ring-previous))
-(after-load 'page-break-lines
-  (push 'browse-kill-ring-mode page-break-lines-modes))
+(with-eval-after-load 'page-break-lines
+  (add-to-list 'page-break-lines-modes 'browse-kill-ring-mode))
 
 
 ;;----------------------------------------------------------------------------
@@ -219,7 +221,7 @@
 ;;----------------------------------------------------------------------------
 (when (maybe-require-package 'page-break-lines)
   (add-hook 'after-init-hook 'global-page-break-lines-mode)
-  (after-load 'page-break-lines
+  (with-eval-after-load 'page-break-lines
     (diminish 'page-break-lines-mode)))
 
 ;;----------------------------------------------------------------------------
@@ -256,7 +258,7 @@
 ;;----------------------------------------------------------------------------
 (require-package 'whole-line-or-region)
 (add-hook 'after-init-hook 'whole-line-or-region-global-mode)
-(after-load 'whole-line-or-region
+(with-eval-after-load 'whole-line-or-region
   (diminish 'whole-line-or-region-local-mode))
 
 
@@ -278,7 +280,7 @@
     (advice-add 'cua--activate-rectangle :after
                 (lambda (&rest _)
                   (when (bound-and-true-p mode-name)
-                    (push mode-name sanityinc/suspended-modes-during-cua-rect)
+                    (add-to-list 'sanityinc/suspended-modes-during-cua-rect mode-name)
                     (funcall mode-name 0))))))
 
 (sanityinc/suspend-mode-during-cua-rect-selection 'whole-line-or-region-local-mode)
@@ -341,7 +343,7 @@ With arg N, insert N newlines."
 (require-package 'which-key)
 (add-hook 'after-init-hook 'which-key-mode)
 (setq-default which-key-idle-delay 1.5)
-(after-load 'which-key
+(with-eval-after-load 'which-key
   (diminish 'which-key-mode))
 
 
