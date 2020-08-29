@@ -1,3 +1,7 @@
+;;; init-cpp.el --- C/C++ support -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
 (require-package 'irony)
 (require-package 'company-irony)
 (require-package 'flycheck-irony)
@@ -11,3 +15,4 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 (provide 'init-cpp)
+;;; init-cpp.el ends here
