@@ -1,53 +1,54 @@
-;; adapted from:
-;; https://github.com/ocaml/tuareg/blob/master/dot-emacs.el
-;;
+;;; init-ocaml.el --- Support the OCaml language -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
-(require-package 'tuareg)
-(load "/home/brennan/.opam/system/share/emacs/site-lisp/tuareg-site-file")
+(when (maybe-require-package 'tuareg)
+  (when (maybe-require-package 'merlin)
+    (autoload 'merlin-mode "merlin" "Merlin mode" t)
+    (add-hook 'tuareg-mode-hook 'merlin-mode)
 
-;; See README
-(setq tuareg-indent-align-with-first-arg nil)
+    (with-eval-after-load 'merlin
+      (with-eval-after-load 'company
+        (push 'merlin-company-backend company-backends)))
 
-(add-hook
- 'tuareg-mode-hook
- (lambda()
-   (setq show-trailing-whitespace t)
-   (setq indicate-empty-lines t)
+    (when (maybe-require-package 'merlin-eldoc)
+      (with-eval-after-load 'merlin
+        (autoload 'merlin-eldoc--gather-info "merlin-eldoc")
+        (add-hook 'merlin-mode-hook
+                  (lambda ()
+                    (setq-local eldoc-documentation-function
+                                #'merlin-eldoc--gather-info))))))
 
-   ;; Enable the representation of some keywords using fonts
-   (when (functionp 'prettify-symbols-mode)
-     (prettify-symbols-mode))
+  (with-eval-after-load 'tuareg
+    (defvar-local tuareg-previous-tuareg-buffer nil
+      "Buffer from which we jumped to the REPL.")
 
-   (when (functionp 'flyspell-prog-mode)
-     (flyspell-prog-mode))
-   ;; See README
-   (setq tuareg-match-patterns-aligned t)
-   (electric-indent-mode 0)
-   ))
+    (defun sanityinc/tuareg-repl-switch ()
+      (interactive)
+      (let ((last-tuareg-buf (when (derived-mode-p 'tuareg-mode)
+                               (current-buffer))))
+        (tuareg-run-ocaml)
+        (pop-to-buffer tuareg-interactive-buffer-name)
+        (when last-tuareg-buf
+          (setq-local tuareg-previous-tuareg-buffer last-tuareg-buf))))
 
-;; Easy keys to navigate errors after compilation:
-;;(define-key tuareg-mode-map [(f12)] 'next-error)
-;;(define-key tuareg-mode-map [(shift f12)] 'previous-error)
+    (defun sanityinc/tuareg-repl-switch-back ()
+      (interactive)
+      (when tuareg-previous-tuareg-buffer
+        (pop-to-buffer tuareg-previous-tuareg-buffer)))
 
-(require-package 'merlin)
-(setq merlin-command 'opam)
-(add-to-list 'auto-mode-alist '("/\\.merlin\\'" . conf-mode))
+    (define-key tuareg-mode-map (kbd "C-c C-z") 'sanityinc/tuareg-repl-switch)
+    (define-key tuareg-interactive-mode-map (kbd "C-c C-z") 'sanityinc/tuareg-repl-switch-back)))
 
-(when (functionp 'merlin-document)
-  (define-key tuareg-mode-map (kbd "\C-c\C-h") 'merlin-document))
+(when (maybe-require-package 'reformatter)
+  (defcustom ocp-indent-args nil
+    "Arguments for \"ocp-indent\" invocation.")
 
-;; Run Merlin if a .merlin file in the parent dirs is detected
-(add-hook 'tuareg-mode-hook
-          (lambda()
-            (let ((fn (buffer-file-name)))
-              (if (and fn (locate-dominating-file fn ".merlin"))
-                  (merlin-mode)))))
+  (reformatter-define ocp-indent
+    :program "ocp-indent"
+    :args ocp-indent-args
+    :lighter " OCP"))
 
-;; Choose modes for related config. files
-(setq auto-mode-alist
-      (append '(("_oasis\\'" . conf-mode)
-                ("_tags\\'" . conf-mode)
-                ("_log\\'" . conf-mode))
-              auto-mode-alist))
 
 (provide 'init-ocaml)
+;;; init-ocaml.el ends here
