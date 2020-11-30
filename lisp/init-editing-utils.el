@@ -317,6 +317,8 @@ ORIG is the advised function, which is called with its ARGS."
 
 (advice-add 'kmacro-call-macro :around 'sanityinc/disable-features-during-macro-call)
 
+
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

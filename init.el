@@ -137,7 +137,7 @@
 (require 'init-ess)
 (require 'init-sml)
 ;;(require 'init-scala)
-(require 'init-scheme)
+;; (require 'init-scheme)
 (require 'init-cpp)
 (require 'init-crystal)
 (require 'init-golang)
