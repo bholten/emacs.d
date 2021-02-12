@@ -40,7 +40,10 @@
 ;; At the end on purpose, if anything goes wrong the theme/fonts will
 ;; be wrong
 (require-package 'material-theme)
-(load-theme 'material t)
+(require-package 'kaolin-themes)
+
+(load-theme 'kaolin-light t)
+
 (add-to-list 'default-frame-alist '(font . "Inconsolata-18"))
 (set-face-attribute 'default t :font "Inconsolata-18")
 
