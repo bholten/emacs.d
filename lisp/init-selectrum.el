@@ -14,27 +14,31 @@
 
   (when (maybe-require-package 'embark)
     (define-key selectrum-minibuffer-map (kbd "C-c C-o") 'embark-export)
-    (define-key selectrum-minibuffer-map (kbd "C-c C-c") 'embark-act-noexit))
+    (define-key selectrum-minibuffer-map (kbd "C-c C-c") 'embark-act))
 
   (when (maybe-require-package 'consult)
     (when (maybe-require-package 'projectile)
       (setq-default consult-project-root-function 'projectile-project-root))
 
     (when (executable-find "rg")
-      (global-set-key (kbd "M-?") 'consult-ripgrep))
+      (defun sanityinc/consult-ripgrep-at-point (&optional dir initial)
+        (interactive (list prefix-arg (let ((s (symbol-at-point)))
+                                        (when s (symbol-name s)))))
+        (consult-ripgrep dir initial)))
+    (global-set-key (kbd "M-?") 'sanityinc/consult-ripgrep-at-point)
     (global-set-key [remap switch-to-buffer] 'consult-buffer)
     (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)
     (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
     (when (maybe-require-package 'embark-consult)
       (with-eval-after-load 'embark
         (require 'embark-consult)
-        (add-hook 'embark-collect-mode-hook 'embark-consult-preview-minor-mode))))
+        (add-hook 'embark-collect-mode-hook 'embark-consult-preview-minor-mode)))
 
-  (maybe-require-package 'consult-flycheck)
+    (maybe-require-package 'consult-flycheck)))
 
-  (when (maybe-require-package 'marginalia)
-    (add-hook 'after-init-hook 'marginalia-mode)
-    (setq-default marginalia-annotators '(marginalia-annotators-heavy))))
+(when (maybe-require-package 'marginalia)
+  (add-hook 'after-init-hook 'marginalia-mode)
+  (setq-default marginalia-annotators '(marginalia-annotators-heavy)))
 
 (with-eval-after-load 'desktop
   ;; Try to prevent old minibuffer completion system being reactivated in
