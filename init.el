@@ -1,12 +1,5 @@
 ;;; Personal configuration -*- lexical-binding: t -*-
 
-;; Save the contents of this file under ~/.emacs.d/init.el
-;; Do not forget to use Emacs' built-in help system:
-;; Use C-h C-h to get an overview of all help commands.  All you
-;; need to know about Emacs (what commands exist, what functions do,
-;; what variables specify), the help system can provide.
-
-;; Add the NonGNU ELPA package archive
 (require 'package)
 (add-to-list 'package-archives '( "melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives  '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
