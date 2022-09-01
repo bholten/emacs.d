@@ -31,9 +31,10 @@
   ;; The default user name
   (git-identity-default-username "Brennan Holten"))
 
-;; And set git-identity-list in your custom-file or init file
+;; Set the git-identity-list var to a list of identities
+;; File hidden for privacy
+;; (setq git-identity-list '(("personal.email@acme.com)))
 (load-file (expand-file-name "lisp/.git-identities.el" user-emacs-directory))
-(setq git-identity-list *identity-list*)
 
 (provide 'init-magit)
 ;;; init-magit.el ends here
