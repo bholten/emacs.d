@@ -2,14 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-
-;;; Git client
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
 ;; Bind the `magit-status' command to a convenient key.
 (global-set-key (kbd "C-c g") #'magit-status)
-
 
 (unless (package-installed-p 'magit-lfs)
   (package-install 'magit-lfs))
@@ -34,7 +31,9 @@
 ;; Set the git-identity-list var to a list of identities
 ;; File hidden for privacy
 ;; (setq git-identity-list '(("personal.email@acme.com)))
-(load-file (expand-file-name "lisp/.git-identities.el" user-emacs-directory))
+(let ((file (expand-file-name "lisp/.git-identities.el" user-emacs-directory)))
+  (when (file-exists-p file)
+    (load-file file)))
 
 (provide 'init-magit)
 ;;; init-magit.el ends here
