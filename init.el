@@ -128,6 +128,7 @@
 
 ;; Tools
 (require 'init-docker)
+(require 'init-nix)
 (require 'init-sly)
 
 ;; Languages
@@ -146,6 +147,7 @@
 (require 'init-lfe)
 (require 'init-lua)
 (require 'init-nasm)
+(require 'init-ocaml)
 (require 'init-php)
 (require 'init-raku)
 (require 'init-ruby)
