@@ -128,6 +128,7 @@
 
 ;; Tools
 (require 'init-docker)
+(require 'init-http)
 (require 'init-nix)
 (require 'init-sly)
 
