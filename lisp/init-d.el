@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; D Support
 (unless (package-installed-p 'd-mode)
   (package-install 'd-mode))
 
