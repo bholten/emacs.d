@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; Kotlin Support
 (unless (package-installed-p 'kotlin-mode)
   (package-install 'kotlin-mode))
 
