@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; LaTeX support
 (unless (package-installed-p 'auctex)
   (package-install 'auctex))
 (setq TeX-auto-save t)

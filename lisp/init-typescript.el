@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; Typescript Support
 (unless (package-installed-p 'typescript-mode)
   (package-install 'typescript-mode))
 

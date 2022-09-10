@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
 (use-package treemacs
   :ensure t
   :defer t

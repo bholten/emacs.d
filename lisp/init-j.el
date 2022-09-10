@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; J Support
 (unless (package-installed-p 'j-mode)
   (package-install 'j-mode))
 

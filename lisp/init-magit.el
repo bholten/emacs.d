@@ -11,7 +11,8 @@
 (unless (package-installed-p 'magit-lfs)
   (package-install 'magit-lfs))
 
-(require 'magit-lfs)
+(unless (package-installed-p 'magit-lfs)
+  (package-install 'magit-lfs))
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
