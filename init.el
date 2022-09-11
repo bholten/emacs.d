@@ -117,6 +117,7 @@
 (require 'init-diffhl)
 (require 'init-editing)
 (require 'init-embark)
+(require 'init-flymake)
 (require 'init-ibuffer)
 (require 'init-local)
 (require 'init-magit)
