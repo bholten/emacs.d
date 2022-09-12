@@ -8,7 +8,5 @@
 (unless (package-installed-p 'consult-eglot)
   (package-install 'consult-eglot))
 
-(add-hook 'prog-mode-hook #'eglot-ensure)
-
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

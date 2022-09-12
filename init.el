@@ -119,6 +119,7 @@
 (require 'init-embark)
 (require 'init-flymake)
 (require 'init-ibuffer)
+(require 'init-lsp)
 (require 'init-local)
 (require 'init-magit)
 (require 'init-paredit)
