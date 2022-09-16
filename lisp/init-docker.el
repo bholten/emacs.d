@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package docker
+  :after (fullframe)
   :init
   (fullframe docker-images tablist-quit)
   (fullframe docker-machines tablist-quit)
