@@ -2,19 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'simple-httpd)
-  (package-install 'simple-httpd))
-
-(unless (package-installed-p 'restclient)
-  (package-install 'restclient))
-
-(unless (package-installed-p 'company-restclient)
-  (package-install 'company-restclient))
-
-(unless (package-installed-p 'htmlize)
-  (package-install 'htmlize))
-
-(add-hook 'restclient-mode 'company-restclient)
+(use-package simple-httpd)
+(use-package restclient
+  :hook company-resclient)
+(use-package company-restclient)
+(use-package htmlize)
 
 (defun bholten/restclient ()
   (interactive)

@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'yaml-mode)
-  (package-install 'yaml-mode))
+(use-package yaml-mode)
 
 (provide 'init-yaml)
 ;;; init-yaml.el ends here

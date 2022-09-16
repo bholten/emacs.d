@@ -2,12 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'auctex)
-  (package-install 'auctex))
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
-
+(use-package auctex
+  :config
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  (setq-default TeX-master nil))
 
 ;; Enable LaTeX math support
 (add-hook 'LaTeX-mode-map #'LaTeX-math-mode)

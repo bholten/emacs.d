@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; JSON Support
-(unless (package-installed-p 'json-mode)
-  (package-install 'json-mode))
+(use-package json-mode)
 
 (provide 'init-json)
 ;;; init-json.el ends here

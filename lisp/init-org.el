@@ -7,8 +7,7 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 
 ;;; Additional Org-mode related functionality
-(unless (package-installed-p 'org-contrib)
-  (package-install 'org-contrib))
+(use-package org-contrib)
 
 (provide 'init-org)
 ;;; init-org.el ends here

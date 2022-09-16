@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; Markdown support
-(unless (package-installed-p 'markdown-mode)
-  (package-install 'markdown-mode))
+(use-package markdown-mode)
 
 (provide 'init-markdown)
 ;;; init-markdown.el ends here

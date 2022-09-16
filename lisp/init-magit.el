@@ -2,21 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'magit)
-  (package-install 'magit))
-
-;; Bind the `magit-status' command to a convenient key.
-(global-set-key (kbd "C-c g") #'magit-status)
-
-(unless (package-installed-p 'magit-lfs)
-  (package-install 'magit-lfs))
-
-(unless (package-installed-p 'magit-lfs)
-  (package-install 'magit-lfs))
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
+(use-package magit
+  :bind (("C-c g" . magit-status)))
+(use-package magit-lfs)
 (use-package git-identity
   :after magit
   :config

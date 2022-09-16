@@ -2,9 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'lfe-mode)
-  (package-install 'lfe-mode))
-(add-hook 'lfe-mode 'paredit-mode)
+(use-package lfe-mode
+  :mode "\\.lfe"
+  :hook paredit-mode)
 
 (provide 'init-lfe)
 ;;; init-lfe.el ends here

@@ -2,16 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'haskell-mode)
-  (package-install 'haskell-mode))
-
-(add-hook 'haskell-mode-hook 'subword-mode)
-(add-hook 'haskell-cabal-mode 'subword-mode)
-(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-;; Indentation
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;; Source code helpers
-(add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+(use-package haskell-mode
+  :hook
+  (haskell-mode . subword-mode)
+  (haskell-cabal-mode . subword-mode)
+  (haskell-mode . interactive-haskell-mode)
+  (haskell-mode . turn-on-haskell-indentation)
+  (haskell-mode . haskell-auto-insert-module-template))
 
 (provide 'init-haskell)
 ;;; init-haskell.el ends here

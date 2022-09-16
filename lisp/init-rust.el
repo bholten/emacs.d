@@ -2,10 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'rust-mode)
-  (package-install 'rust-mode))
-(unless (package-installed-p 'flycheck-rust)
-  (package-install 'flycheck-rust))
+(use-package rust-mode)
+(use-package flycheck-rust)
 (with-eval-after-load 'rust-mode
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 

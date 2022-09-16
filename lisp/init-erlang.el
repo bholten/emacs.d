@@ -2,10 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'erlang)
-  (package-install 'erlang))
-
-(require 'erlang-start)
+(use-package  erlang)
 
 (provide 'init-erlang)
 ;;; init-erlang.el ends here

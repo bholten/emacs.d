@@ -2,30 +2,23 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'move-dup)
-  (package-install 'move-dup))
-
-(global-set-key (kbd "C-c u") 'move-dup-move-lines-up)
-(global-set-key (kbd "C-c d") 'move-dup-move-lines-down)
+(use-package move-dup
+  :bind (("C-c u" . move-dup-move-lines-up)
+	 ("C-c d" . move-dup-move-lines-down)))
 
 (unless (package-installed-p 'multiple-cursors)
   (package-install 'multiple-cursors))
 
-;; multiple-cursors
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-+") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(use-package multiple-cursors
+  :bind (("C-<" . mc/mark-previous-like-this)
+	 ("C->" . mc/mark-next-like-this)
+	 ("C-+" . mc/mark-next-like-this)
+	 ("C-c C-<" . mc/mark-all-like-this)))
 
-;; which-key
-(unless (package-installed-p 'diminish)
-  (package-install 'diminish))
-(unless (package-installed-p 'which-key)
-  (package-install 'which-key))
-(add-hook 'after-init-hook 'which-key-mode)
-(setq-default which-key-idle-delay 1.5)
-(with-eval-after-load 'which-key
-  (diminish 'which-key-mode))
+(use-package diminish)
+(use-package which-key
+  :config (setq-default which-key-idle-delay 1.5)
+  :hook after-init)
 
 (provide 'init-editing)
 ;;; init-editing.el ends here

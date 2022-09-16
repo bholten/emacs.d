@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'elixir-mode)
-  (package-install 'elixir-mode))
+(use-package elixir-mode)
 
 (provide 'init-elixir)
 ;;; init-elixir.el ends here

@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'j-mode)
-  (package-install 'j-mode))
+(use-package j-mode)
 
 (provide 'init-j)
 ;;; init-j.el ends here
