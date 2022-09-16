@@ -2,14 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'doom-themes)
-  (package-install 'doom-themes))
-(unless (package-installed-p 'htmlize)
-  (package-install 'htmlize))
-
-(defun print-to-browser ()
-  (interactive)
-  (browse-url-of-buffer (htmlize-buffer)))
+(use-package doom-themes)
 
 (define-key emacs-lisp-mode-map
   (kbd "C-c C-c") #'eval-last-sexp)

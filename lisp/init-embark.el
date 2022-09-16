@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
 (use-package marginalia
   :ensure t
   :config

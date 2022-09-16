@@ -2,12 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'switch-window)
-  (package-install 'switch-window))
-
-(setq-default switch-window-shortcut-style 'alphabet)
-(setq-default switch-window-timeout nil)
-(global-set-key (kbd "C-x o") 'switch-window)
+(use-package switch-window
+  :bind ("C-x o" . switch-window)
+  :config
+  (setq-default switch-window-shortcut-style 'alphabet)
+  (setq-default switch-window-timeout nil))
 
 (provide 'init-window)
 ;;; init-window.el ends here

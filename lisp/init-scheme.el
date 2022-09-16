@@ -2,14 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'geiser)
-  (package-install 'geiser))
-
-(unless (package-installed-p 'racket-mode)
-  (package-install 'racket-mode))
+(use-package geiser)
+(use-package racket-mode
+  :hook paredit-mode)
 
 (add-hook 'scheme-mode 'paredit-mode)
-(add-hook 'racket-mode 'paredit-mode)
 
 (provide 'init-scheme)
 

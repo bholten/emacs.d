@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'kotlin-mode)
-  (package-install 'kotlin-mode))
+(use-package kotlin-mode)
 
 (provide 'init-kotlin)
 ;;; init-kotlin.el ends here

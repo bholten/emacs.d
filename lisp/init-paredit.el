@@ -2,15 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'paredit)
-  (package-install 'paredit))
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(use-package paredit
+ :init
+ (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+ :hook
+ ((emacs-list-mode
+   eval-expression-minibuffer-setup
+   ielm-mode
+   lisp-mode
+   lisp-interaction-mode
+   scheme-mode) . enable-paredit-mode))
 
 (provide 'init-paredit)
 ;;; init-paredit.el ends here

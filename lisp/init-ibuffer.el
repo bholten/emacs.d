@@ -2,14 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'fullframe)
-  (package-install 'fullframe))
-
 (with-eval-after-load 'ibuffer
  (fullframe ibuffer ibuffer-quit))
 
-(unless (package-installed-p 'ibuffer-vc)
-  (package-install 'ibuffer-vc))
+(use-package ibuffer-vc)
 
 (defun ibuffer-set-up-preferred-filters ()
   (ibuffer-vc-set-filter-groups-by-vc-root)

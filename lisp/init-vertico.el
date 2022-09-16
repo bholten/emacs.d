@@ -3,9 +3,7 @@
 ;;; Code:
 
 ;;; Completion framework
-(unless (package-installed-p 'vertico)
-  (package-install 'vertico))
-
+(use-package vertico)
 ;; Enable completion by narrowing
 (vertico-mode t)
 
@@ -14,9 +12,6 @@
   (define-key vertico-map (kbd "RET") #'vertico-directory-enter)
   (define-key vertico-map (kbd "DEL") #'vertico-directory-delete-word)
   (define-key vertico-map (kbd "M-d") #'vertico-directory-delete-char))
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 
 (use-package orderless
   :init

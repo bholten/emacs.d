@@ -2,11 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'eglot)
-  (package-install 'eglot))
-
-(unless (package-installed-p 'consult-eglot)
-  (package-install 'consult-eglot))
+(use-package eglot)
+(use-package consult-eglot)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

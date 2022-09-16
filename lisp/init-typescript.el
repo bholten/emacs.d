@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'typescript-mode)
-  (package-install 'typescript-mode))
+(use-package typescript-mode)
 
 (provide 'init-typescript)
 ;;; init-typescript.el ends here

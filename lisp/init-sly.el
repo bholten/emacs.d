@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'sly)
-  (package-install 'sly))
+(use-package sly)
 
 (provide 'init-sly)
 ;;; init-sly.el ends ehre

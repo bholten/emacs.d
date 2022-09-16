@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; C# Support
-(unless (package-installed-p 'csharp-mode)
-  (package-install 'csharp-mode))
+(use-package csharp-mode)
 
 (provide 'init-csharp)
 ;;; init-csharp.el ends here

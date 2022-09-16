@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'julia-mode)
-  (package-install 'julia-mode))
+(use-package julia-mode)
 
 (provide 'init-julia)
 ;;; init-julia.el ends here

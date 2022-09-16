@@ -2,19 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; Basic ruby setup
-(unless (package-installed-p 'ruby-hash-syntax)
-  (package-install 'ruby-hash-syntax))
-(unless (package-installed-p 'company-inf-ruby)
-  (package-install 'company-inf-ruby))
-(unless (package-installed-p 'rspec-mode)
-  (package-install 'rspec-mode))
-(unless (package-installed-p 'inf-ruby)
-  (package-install 'inf-ruby))
-(unless (package-installed-p 'robe)
-  (package-install 'robe))
-(unless (package-installed-p 'ruby-end)
-  (package-install 'ruby-end))
+(use-package ruby-hash-syntax)
+(use-package company-inf-ruby)
+(use-package rspec-mode)
+(use-package inf-ruby)
+(use-package robe)
+(use-package ruby-end)
 
 (setq-default
  ruby-use-encoding-map nil
@@ -24,8 +17,6 @@
 
 (with-eval-after-load 'page-break-lines
   (add-to-list 'page-break-lines-modes 'ruby-mode))
-
-;;; Inferior ruby
 
 ;;; Robe
 (when (package-installed-p 'robe)

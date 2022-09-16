@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'lua-mode)
-  (package-install 'lua-mode))
+(use-package lua-mode)
 
 (provide 'init-lua)
 ;;; init-lua.el ends here

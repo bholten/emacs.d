@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'flymake-flycheck)
-  (package-install 'flymake-flycheck))
-
+(use-package flymake-flycheck)
 (with-eval-after-load 'flycheck
     (setq-default flycheck-disabled-checkers
                   (append (default-value 'flycheck-disabled-checkers)

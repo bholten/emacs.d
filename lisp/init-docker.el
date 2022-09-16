@@ -2,19 +2,15 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'docker)
-  (package-install 'docker))
-(unless (package-installed-p 'dockerfile-mode)
-  (package-install 'dockerfile-mode))
-(unless (package-installed-p 'docker-compose-mode)
-  (package-install 'docker-compose-mode))
-
-(when (package-installed-p 'docker)
+(use-package docker
+  :init
   (fullframe docker-images tablist-quit)
   (fullframe docker-machines tablist-quit)
   (fullframe docker-volumes tablist-quit)
   (fullframe docker-networks tablist-quit)
   (fullframe docker-containers tablist-quit))
+(use-package dockerfile-mode)
+(use-package docker-compose-mode)
 
 (provide 'init-docker)
 ;;; init-docker.el ends here

@@ -8,15 +8,6 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(unless (package-installed-p 'exec-path-from-shell)
-  (package-install 'exec-path-from-shell))
-
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
-(when (daemonp)
-  (exec-path-from-shell-initialize))
-
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -27,9 +18,13 @@
       backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-(unless (package-installed-p 'fullframe)
-  (package-install 'fullframe))
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
 
+(use-package fullframe)
 (fullframe list-packages quit-window)
 
 ;; Disable the tool bar
@@ -46,9 +41,8 @@
 (setq-default
  window-resize-pixelwise t
  frame-resize-pixelwise t)
-(unless (package-installed-p 'default-text-scale)
-  (package-install 'default-text-scale))
-(add-hook 'after-init-hook 'default-text-scale-mode)
+(use-package default-text-scale
+  :hook after-init)
 
 ;; Enable line numbering in `prog-mode'
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
@@ -60,19 +54,16 @@
 (add-hook 'prog-mode-hook #'flymake-mode)
 
 ;;; Pop-up auto-completion
-(unless (package-installed-p 'company)
-  (package-install 'company))
-(add-hook 'after-init-hook 'global-company-mode)
-(unless (package-installed-p 'company-quickhelp)
-  (package-install 'company-quickhelp))
-(add-hook 'after-init-hook 'company-quickhelp-mode)
+(use-package company
+  :hook after-init)
+(use-package company-quickhelp
+  :hook after-init)
 
 ;; Enable Company by default in programming buffers
 (add-hook 'prog-mode-hook #'company-mode)
 
 ;;; EditorConfig support
-(unless (package-installed-p 'editorconfig)
-  (package-install 'editorconfig))
+(use-package editorconfig)
 
 ;; Enable EditorConfig
 (editorconfig-mode t)
@@ -84,16 +75,14 @@
  recentf-exclude `("/tmp/" "/ssh:" ,(concat package-user-dir "/.*-autoloads\\.el\\'")))
 
 ;; mmm-mode
-(unless (package-installed-p 'mmm-mode)
-  (package-install 'mmm-mode))
+(use-package mmm-mode)
 (require 'mmm-auto)
 (setq mmm-global-mode 'buffers-with-submode-classes)
 (setq mmm-submode-decoration-level 2)
 
 ;; rainbow parens
-(unless (package-installed-p 'rainbow-delimiters)
-  (package-install 'rainbow-delimiters))
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :hook prog-mode)
 
 ;; hippie-expand
 (global-set-key (kbd "M-/") 'hippie-expand)
@@ -106,11 +95,11 @@
         try-expand-dabbrev-from-kill))
 
 ;; Undo
-(unless (package-installed-p  'undo-tree)
-  (package-install 'undo-tree))
-(setq undo-tree-visualizer-diff nil
-      undo-tree-auto-save-history nil)
-(global-undo-tree-mode)
+(use-package undo-tree
+  :init (global-undo-tree-mode)
+  :config
+  (setq undo-tree-visualizer-diff nil
+	undo-tree-auto-save-history nil))
 
 ;; Control backup files
 (setq delete-autosafe-files t ;; Deletes buffer autosave file when saved or exited.
@@ -171,9 +160,8 @@
 (require 'init-yaml)
 
 ;;; Jump to arbitrary positions
-(unless (package-installed-p 'avy)
-  (package-install 'avy))
-(global-set-key (kbd "C-c z") #'avy-goto-word-1)
+(use-package avy
+  :bind ("C-c z" . avy-goto-word-1))
 
 ;; Miscellaneous options
 (setq-default major-mode

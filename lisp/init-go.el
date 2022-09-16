@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'go-mode)
-  (package-install 'go-mode))
+(use-package go-mode)
 
 (provide 'init-go)
 ;;; init-go.el ends here

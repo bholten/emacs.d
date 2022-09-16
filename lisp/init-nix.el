@@ -2,14 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(unless (package-installed-p 'nix-mode)
-  (package-install 'nix-mode))
-(unless (package-installed-p 'nixpkgs-fmt)
-  (package-install 'nixpkgs-fmt))
-(unless (package-installed-p 'nix-sandbox)
-  (package-install 'nix-sandbox))
-(unless (package-installed-p 'nix-buffer)
-  (package-install 'nix-buffer))
+(use-package nix-mode)
+(use-package nixpkgs-fmt)
+(use-package nix-sandbox)
+(use-package nix-buffer)
 
 (provide 'init-nix)
 ;;; init-nix.el ends here
