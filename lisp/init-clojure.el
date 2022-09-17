@@ -6,11 +6,13 @@
 (use-package cljsbuild-mode)
 (use-package elein)
 (use-package cider
-  :hook
-  (cider-repl-mode . paredit-mode)
-  (cider-repl-mode . rainbow-delimiters-mode))
+  :config (setq nrepl-popup-stacktraces nil))  
+(use-package flycheck-clojure)
+
+(with-eval-after-load 'clojure-mode
+  (with-eval-after-load 'cider
+    (with-eval-after-load 'flycheck
+      (flycheck-clojure-setup))))
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here
-
-
