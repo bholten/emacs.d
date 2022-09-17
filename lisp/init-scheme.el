@@ -3,10 +3,7 @@
 ;;; Code:
 
 (use-package geiser)
-(use-package racket-mode
-  :hook paredit-mode)
-
-(add-hook 'scheme-mode 'paredit-mode)
+(use-package racket-mode)
 
 (provide 'init-scheme)
 

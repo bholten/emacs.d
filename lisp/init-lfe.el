@@ -3,8 +3,7 @@
 ;;; Code:
 
 (use-package lfe-mode
-  :mode "\\.lfe"
-  :hook paredit-mode)
+  :mode "\\.lfe")
 
 (provide 'init-lfe)
 ;;; init-lfe.el ends here

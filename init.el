@@ -135,6 +135,7 @@
 ;; Languages
 (require 'init-ada)
 (require 'init-clojure)
+(require 'init-common-lisp)
 (require 'init-d)
 (require 'init-elixir)
 (require 'init-erlang)
