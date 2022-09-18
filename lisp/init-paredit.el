@@ -10,6 +10,7 @@
    lisp-mode
    lisp-interaction-mode
    scheme-mode
+   racket-mode
    clojure-mode) . enable-paredit-mode))
 
 (provide 'init-paredit)
