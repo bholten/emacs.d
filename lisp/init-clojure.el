@@ -8,6 +8,8 @@
 (use-package cider
   :config (setq nrepl-popup-stacktraces nil))  
 (use-package flycheck-clojure)
+(use-package clj-refactor
+  :hook clojure-mode)
 
 (with-eval-after-load 'clojure-mode
   (with-eval-after-load 'cider
