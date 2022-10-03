@@ -120,6 +120,7 @@
 (require 'init-lsp)
 (require 'init-local)
 (require 'init-magit)
+(require 'init-org)
 (require 'init-paredit)
 (require 'init-treemacs)
 (require 'init-uniquify)
