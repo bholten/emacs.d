@@ -5,6 +5,7 @@
 (use-package eglot)
 (use-package consult-eglot)
 
+(require 'yasnippet)
 (yas-global-mode 1)
 
 (provide 'init-lsp)

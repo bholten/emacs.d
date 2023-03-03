@@ -9,7 +9,9 @@
   (fullframe docker-machines tablist-quit)
   (fullframe docker-volumes tablist-quit)
   (fullframe docker-networks tablist-quit)
-  (fullframe docker-containers tablist-quit))
+  (fullframe docker-containers tablist-quit)
+  (setq docker-compose-command "docker compose"))
+
 (use-package dockerfile-mode)
 (use-package docker-compose-mode)
 
