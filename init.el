@@ -19,10 +19,8 @@
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 (use-package exec-path-from-shell
-  :if (memq window-system '(mac ns))
-  :ensure t
-  :config
-  (exec-path-from-shell-initialize))
+  :ensure t)
+(exec-path-from-shell-initialize)
 
 (use-package fullframe)
 (fullframe list-packages quit-window)
@@ -151,6 +149,7 @@
 (require 'init-nasm)
 (require 'init-ocaml)
 (require 'init-php)
+(require 'init-python)
 (require 'init-raku)
 (require 'init-ruby)
 (require 'init-rust)

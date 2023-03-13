@@ -34,5 +34,7 @@
   :config
   (add-hook 'tuareg-mode-hook #'utop-minor-mode))
 
+(setq utop-command "opam exec -- dune utop . -- -emacs")
+
 (provide 'init-ocaml)
 ;;; init-ocaml.el ends here
