@@ -127,6 +127,7 @@
 
 ;; Tools
 (require 'init-docker)
+(require 'init-gemini)
 (require 'init-http)
 (require 'init-nix)
 (require 'init-sly)
@@ -150,6 +151,7 @@
 (require 'init-ocaml)
 (require 'init-php)
 (require 'init-python)
+(require 'init-r)
 (require 'init-raku)
 (require 'init-ruby)
 (require 'init-rust)
