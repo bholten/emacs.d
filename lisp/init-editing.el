@@ -16,9 +16,10 @@
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
 (use-package diminish)
+
 (use-package which-key
   :config (setq-default which-key-idle-delay 1.5)
-  :hook after-init)
+  :init (which-key-mode))
 
 (provide 'init-editing)
 ;;; init-editing.el ends here

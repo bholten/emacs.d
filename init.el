@@ -40,7 +40,7 @@
  window-resize-pixelwise t
  frame-resize-pixelwise t)
 (use-package default-text-scale
-  :hook after-init)
+  :init (default-text-scale-mode))
 
 ;; Enable line numbering in `prog-mode'
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
@@ -53,9 +53,9 @@
 
 ;;; Pop-up auto-completion
 (use-package company
-  :hook after-init)
+  :init (global-company-mode))
 (use-package company-quickhelp
-  :hook after-init)
+  :init (company-quickhelp-mode))
 
 ;; Enable Company by default in programming buffers
 (add-hook 'prog-mode-hook #'company-mode)
@@ -80,7 +80,7 @@
 
 ;; rainbow parens
 (use-package rainbow-delimiters
-  :hook prog-mode)
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; hippie-expand
 (global-set-key (kbd "M-/") 'hippie-expand)
