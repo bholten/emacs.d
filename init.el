@@ -135,6 +135,7 @@
 ;; Languages
 (require 'init-ada)
 (require 'init-clojure)
+(require 'init-cpp)
 (require 'init-d)
 (require 'init-elixir)
 (require 'init-erlang)
@@ -160,6 +161,7 @@
 (require 'init-sml)
 (require 'init-typescript)
 (require 'init-yaml)
+(require 'init-zig)
 
 ;;; Jump to arbitrary positions
 (use-package avy
