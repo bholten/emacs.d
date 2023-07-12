@@ -3,6 +3,8 @@
 ;;; Code:
 
 (use-package geiser)
+(use-package geiser-guile)
+(use-package geiser-chez)
 (use-package racket-mode)
 
 (provide 'init-scheme)
