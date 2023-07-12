@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package erlang)
+(use-package erlang
+  :config (setq indent-tabs-mode nil))
+
 (use-package edts)
 
 (provide 'init-erlang)
