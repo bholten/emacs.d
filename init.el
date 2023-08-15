@@ -129,6 +129,7 @@
 (require 'init-docker)
 (require 'init-gemini)
 (require 'init-http)
+(require 'init-k8s)
 (require 'init-nix)
 (require 'init-sly)
 
