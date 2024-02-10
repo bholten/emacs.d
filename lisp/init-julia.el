@@ -16,5 +16,7 @@
   ;; Set the terminal backend
   (julia-repl-set-terminal-backend 'vterm))
 
+(use-package eglot-jl)
+
 (provide 'init-julia)
 ;;; init-julia.el ends here
