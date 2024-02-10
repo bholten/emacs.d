@@ -17,6 +17,9 @@
 
 (use-package diminish)
 
+(use-package vterm
+  :ensure t)
+
 (use-package which-key
   :config (setq-default which-key-idle-delay 1.5)
   :init (which-key-mode))
