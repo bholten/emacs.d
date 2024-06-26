@@ -17,6 +17,8 @@
 
 (use-package diminish)
 
+(use-package auctex)
+
 (use-package vterm
   :ensure t)
 
