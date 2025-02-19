@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package eglot)
+(use-package project)
+(use-package eglot :defer t)
 (use-package consult-eglot)
 
 (use-package yasnippet)

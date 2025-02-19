@@ -36,5 +36,8 @@
 
 (setq utop-command "opam exec -- dune utop . -- -emacs")
 
+;; for coq
+(use-package proof-general)
+
 (provide 'init-ocaml)
 ;;; init-ocaml.el ends here
