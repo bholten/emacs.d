@@ -128,6 +128,7 @@
 ;; Tools
 (require 'init-docker)
 (require 'init-gemini)
+(require 'init-guix)
 (require 'init-http)
 (require 'init-k8s)
 (require 'init-nix)
@@ -152,6 +153,7 @@
 (require 'init-nasm)
 (require 'init-ocaml)
 (require 'init-php)
+(require 'init-purescript)
 (require 'init-python)
 (require 'init-r)
 (require 'init-raku)

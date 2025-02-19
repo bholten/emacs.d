@@ -2,9 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package d-mode)
-(use-package company-dcd
-  :hook (d-mode . company-dcd-mode))
+(use-package d-mode
+  :init (with-eval-after-load 'eglot
+	  (add-to-list 'eglot-server-programs
+		       '(d-mode . ("~/.local/bin/serve-d")))))
+;;(use-package company-dcd)
 
 (provide 'init-d)
 ;;; init-d.el ends here
