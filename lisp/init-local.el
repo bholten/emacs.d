@@ -3,9 +3,10 @@
 ;;; Code:
 
 (use-package doom-themes)
+(use-package acme-theme)
 
 (define-key emacs-lisp-mode-map
-  (kbd "C-c C-c") #'eval-last-sexp)
+	    (kbd "C-c C-c") #'eval-last-sexp)
 (define-key lisp-interaction-mode-map
   (kbd "C-c C-c") #'eval-last-sexp)
 

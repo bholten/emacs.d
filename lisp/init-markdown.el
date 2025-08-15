@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package markdown-mode)
+(use-package adoc-mode)
 
 (provide 'init-markdown)
 ;;; init-markdown.el ends here
