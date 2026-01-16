@@ -27,5 +27,8 @@
   :config (setq-default which-key-idle-delay 1.5)
   :init (which-key-mode))
 
+(setq-default indent-tabs-mode nil
+              tab-width 4)
+
 (provide 'init-editing)
 ;;; init-editing.el ends here

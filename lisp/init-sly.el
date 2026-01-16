@@ -4,5 +4,8 @@
 
 (use-package sly)
 
+;; For roswell
+;; (load (expand-file-name "~/.roswell/helper.el"))
+
 (provide 'init-sly)
 ;;; init-sly.el ends ehre
